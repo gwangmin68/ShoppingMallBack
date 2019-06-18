@@ -1,26 +1,54 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route, Link} from "react-router-dom";
+import {Provider} from "mobx-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import SignUp from './User/SignUp';
+import Login from './User/Login';
+import Home  from './Home';
+
+import Stores from './Stores/index'
+import './App.scss';
+
+const App = () => (
+    <Provider stores={Stores}>
+        <BrowserRouter>
+            <header className="ShoppingMall-header">
+                <ul>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/signup'>회원가입</Link></li>
+                    <li><Link to='/login'>로그인</Link></li>
+                </ul>
+            </header>
+
+            <section className='body'>
+                <Route path='/' exact component={Home}/>
+                <Route path='/signup' exact component={SignUp}/>
+                <Route path='/login' exact component={Login}/>
+            </section>
+        </BrowserRouter>
+    </Provider>
+);
 
 export default App;
+
+// function App() {
+//   return (
+//     <div className="App">
+      {/*<header className="ShoppingMall-header">*/}
+      {/*    <div className="header-quick">*/}
+      {/*        HEADER*/}
+      {/*    </div>*/}
+      {/*</header>*/}
+//         <footer>
+//             <div className="footer-top">
+//                 <div>HOME</div>
+//                 <div>이용약관</div>
+//                 <div>회원정보관리</div>
+//                 <div>이용안내</div>
+//                 <div>고객센터</div>
+//             </div>
+//             <div></div>
+//         </footer>
+//     </div>
+//   );
+// }

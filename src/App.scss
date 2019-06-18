@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.ShoppingMall-header {
+  height: auto;
+  font-size: calc(10px + 2vmin);
+}
+.header-quick{
+
+}
+.body {
+  text-align: left;
+}
+.body-title{
+  padding-top: 40px;
+  border: 1px solid black;
+  align-items: start;
+  text-align: left;
+}
+.body-content{
+  margin: 10px 10%;
+}
+.body-content-text{
+  border-top: black 2px solid;
+  border-bottom: black 2px solid;
+  width: 80%;
+  padding: 10px;
+  font-size: 20px;
+}
+.body-content-input{
+
+}
+.body-content-agree{
+  border-bottom: black 2px solid;
+}
+.footer-top{
+  display: flex;
+  text-align: center;
+}
